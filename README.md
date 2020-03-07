@@ -1,7 +1,7 @@
 ## Rock Paper Scissors 
-
+A simple Rock Paper Scissors game
 ## Deployment
-N/A
+https://msmfa.github.io/rock-paper-scissors/
 ## App in Action
 ![](/IMG/rps-screenshot.png)
 ## Build Tools & Languages
