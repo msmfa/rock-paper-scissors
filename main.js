@@ -1,5 +1,3 @@
-//Global Variables
-
 const buttons = document.querySelectorAll(".buttons");
 let result = document.getElementById("display");
 let score = document.querySelector(".score");
@@ -7,18 +5,16 @@ let pScore = document.querySelector(".p-score");
 let resulting = document.getElementById("resulting");
 let computerScore = 0;
 let playerScore = 0;
-//Button click
+
 
 buttons.forEach(but => but.addEventListener("click", play));
-
-//Store choices
 
 function play(e) {
   const playerChoice = e.target.id;
   const computerChoice = getComputerChoice();
-  const winner = getWinner(playerChoice, computerChoice);
-  result.innerHTML =
-    "The Computer chose " + computerChoice + " you " + winner + "";
+  const outcome = getWinner(playerChoice, computerChoice);
+  result.innerHTML = `The computer chose ${computerChoice} you ${outcome}!`
+
 }
 
 //Get Computer Choice
@@ -41,29 +37,29 @@ function getComputerChoice() {
 function getWinner(player, computer) {
   if (player === computer) return "draw";
 
-  if (player === "rock" && computer === "paper") {
+  else if (player === "rock" && computer === "paper") {
     lose();
     return "lose";
   }
 
-  if (player === "paper" && computer === "scissors") {
+  else if (player === "paper" && computer === "scissors") {
     lose();
     return "lose";
   }
-  if (player === "scissors" && computer === "rock") {
+  else if (player === "scissors" && computer === "rock") {
     lose();
     return "lose";
   }
 
-  if (player === "rock" && computer === "scissors") {
+  else if (player === "rock" && computer === "scissors") {
     win();
     return "win";
   }
-  if (player === "paper" && computer === "rock") {
+  else if (player === "paper" && computer === "rock") {
     win();
     return "win";
   }
-  if (player === "scissors" && computer === "paper") {
+  else if (player === "scissors" && computer === "paper") {
     win();
     return "win";
   }
